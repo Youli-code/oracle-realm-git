@@ -1,0 +1,14 @@
+{
+  "type": "tsd",
+  "title": "Recovering Deleted Local Branch",
+  "summary": "How to recover a local Git branch that was accidentally deleted.",
+  "issue_description": "User deleted a branch before merging and wants to recover the lost work.",
+  "resolution_steps": "Step 1: Run `git reflog`\nStep 2: Find the commit where the branch pointed\nStep 3: Run `git checkout -b <branch-name> <commit>` to restore",
+  "tags": [
+    "git",
+    "recovery",
+    "reflog",
+    "branch"
+  ],
+  "last_updated": "2025-06-07T14:59:15.068932"
+}

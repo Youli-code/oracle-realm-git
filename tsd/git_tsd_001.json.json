@@ -1,0 +1,14 @@
+{
+  "type": "tsd",
+  "title": "Push Rejected: Non-Fast-Forward",
+  "summary": "Push fails because remote contains commits not present locally.",
+  "issue_description": "When pushing, Git returns: 'Updates were rejected because the tip of your current branch is behind its remote counterpart.'",
+  "resolution_steps": "Step 1: Run `git pull --rebase`\nStep 2: Resolve any merge conflicts\nStep 3: Push again with `git push`",
+  "tags": [
+    "git",
+    "push",
+    "rebase",
+    "error"
+  ],
+  "last_updated": "2025-06-07T14:59:15.068916"
+}
