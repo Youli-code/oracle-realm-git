@@ -1,0 +1,13 @@
+{
+  "type": "kbd",
+  "title": "Fixing Non-Fast-Forward Errors in Git",
+  "summary": "Explains what causes non-fast-forward push rejections and how to handle them.",
+  "content": "Non-fast-forward errors occur when the remote branch has new commits not in your local branch. Use `git pull --rebase` to sync before pushing or `git push --force` with caution if overwriting.",
+  "tags": [
+    "git",
+    "non-fast-forward",
+    "push",
+    "rebase"
+  ],
+  "last_updated": "2025-06-07T14:59:15.068635"
+}

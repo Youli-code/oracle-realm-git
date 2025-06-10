@@ -1,0 +1,14 @@
+{
+  "type": "kbd",
+  "title": "How to Undo Commits in Git Safely",
+  "summary": "Details how to reverse commits using revert, reset, and checkout.",
+  "content": "Use `git revert` to undo public commits without altering history. Use `git reset` for local history changes (with --soft, --mixed, or --hard). Use `git checkout` or `restore` to revert specific files.",
+  "tags": [
+    "git",
+    "undo",
+    "revert",
+    "reset",
+    "checkout"
+  ],
+  "last_updated": "2025-06-07T14:59:15.068640"
+}

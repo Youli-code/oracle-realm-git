@@ -1,0 +1,14 @@
+{
+  "type": "tsd",
+  "title": "SSH Key Not Recognized by GitHub",
+  "summary": "Repeated credential prompts even with SSH configured.",
+  "issue_description": "Even after setting up an SSH key, Git keeps asking for GitHub login.",
+  "resolution_steps": "Step 1: Check with `ssh -T git@github.com`\nStep 2: Ensure public key is added in GitHub > SSH Settings\nStep 3: Configure `~/.ssh/config` to match the correct key for github.com",
+  "tags": [
+    "git",
+    "ssh",
+    "credential",
+    "github"
+  ],
+  "last_updated": "2025-06-07T14:59:15.068922"
+}

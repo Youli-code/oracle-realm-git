@@ -1,0 +1,15 @@
+{
+  "type": "tsd",
+  "title": "Undoing a Commit Made to the Wrong Branch",
+  "summary": "Fix a commit accidentally made to main instead of a feature branch.",
+  "issue_description": "Developer committed directly to `main` instead of the intended `feature/login` branch.",
+  "resolution_steps": "Step 1: Checkout the correct branch\nStep 2: Run `git cherry-pick <commit-hash>`\nStep 3: Return to `main` and use `git reset --hard HEAD~1` to undo",
+  "tags": [
+    "git",
+    "commit",
+    "branch",
+    "reset",
+    "cherry-pick"
+  ],
+  "last_updated": "2025-06-07T14:59:15.068925"
+}

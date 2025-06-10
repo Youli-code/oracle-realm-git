@@ -1,0 +1,65 @@
+[
+  {
+    "id": 0,
+    "db_id": 1,
+    "type": "KBD",
+    "title": "Deploy Flask App to Heroku",
+    "content": "This article explains how to deploy a Flask app using Gunicorn and Heroku CLI.",
+    "tags": [
+      "flask",
+      "heroku",
+      "deployment"
+    ]
+  },
+  {
+    "id": 1,
+    "db_id": 2,
+    "type": "TSD",
+    "title": "Fix Docker Permission Denied Errors",
+    "content": "If you get 'permission denied' running Docker, try adding your user to the docker group: sudo usermod -aG docker $USER. Log out and back in after this change.",
+    "tags": [
+      "docker",
+      "linux",
+      "permissions"
+    ]
+  },
+  {
+    "id": 2,
+    "db_id": 3,
+    "type": "KBD",
+    "title": "Understanding Git Merge vs Rebase",
+    "content": "Git merge combines histories and retains commits. Rebase re-applies commits to a new base. Use rebase for linear history, and merge to preserve branch context.",
+    "tags": [
+      "git",
+      "version control",
+      "merge",
+      "rebase"
+    ]
+  },
+  {
+    "id": 3,
+    "db_id": 4,
+    "type": "KBD",
+    "title": "Set Up Jenkins for Python CI/CD",
+    "content": "Install Jenkins and configure a pipeline that runs pytest and flake8. Use virtualenv and caching for dependencies. Archive test results for reporting.",
+    "tags": [
+      "jenkins",
+      "ci",
+      "python",
+      "automation"
+    ]
+  },
+  {
+    "id": 4,
+    "db_id": 5,
+    "type": "KBD",
+    "title": "Deploy Streamlit App on AWS EC2",
+    "content": "Install Streamlit, configure a security group for port 8501, and run the app with `streamlit run app.py`. Use Nginx to reverse proxy if needed.",
+    "tags": [
+      "streamlit",
+      "aws",
+      "ec2",
+      "deployment"
+    ]
+  }
+]

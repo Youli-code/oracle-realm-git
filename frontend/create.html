@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Article | AI Knowledge Bot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: #cccccc;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #7000ff, #00f6ff);
+            color: white;
+        }
+
+        .form-container {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 246, 255, 0.2);
+            margin-top: 40px;
+        }
+
+        .form-label {
+            color: #ffffff;
+        }
+
+        .btn-neon {
+            background: linear-gradient(to right, #00f6ff, #7000ff);
+            color: black;
+            font-weight: 600;
+            border: none;
+        }
+
+        .btn-neon:hover {
+            filter: brightness(1.2);
+        }
+
+        .btn-outline-light {
+            border-color: #cccccc;
+            color: #cccccc;
+        }
+
+        .btn-outline-light:hover {
+            background-color: #333333;
+            border-color: #ffffff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Submit a New Article</h1>
+        <p class="lead">Fill out the document fields and submit for review</p>
+    </header>
+
+    <main class="container">
+        <div class="row">
+
+            <!-- KBD Form -->
+            <div class="col-md-6 form-container">
+                <h3 class="text-white mb-4">KBD Document</h3>
+                <form id="kbdForm">
+                    <div class="mb-3">
+                        <label class="form-label">Title</label>
+                        <input type="text" class="form-control" id="kbdTitle"
+                            placeholder="e.g. How to Configure Jenkins Webhooks">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Summary</label>
+                        <input type="text" class="form-control" id="kbdSummary"
+                            placeholder="Short description of the article">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Content</label>
+                        <textarea class="form-control" id="kbdContent" rows="6"
+                            placeholder="Full content with numbered steps or explanation"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Tags (comma-separated)</label>
+                        <input type="text" class="form-control" id="kbdTags" placeholder="jenkins, webhook, github">
+                    </div>
+                    <button type="submit" class="btn btn-neon">Submit for Review</button>
+                </form>
+            </div>
+
+            <!-- TSD Form -->
+            <div class="col-md-6 form-container">
+                <h3 class="text-white mb-4">TSD Document</h3>
+                <form id="tsdForm">
+                    <div class="mb-3">
+                        <label class="form-label">Title</label>
+                        <input type="text" class="form-control" id="tsdTitle"
+                            placeholder="e.g. Docker Socket Permission Denied">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Summary</label>
+                        <input type="text" class="form-control" id="tsdSummary"
+                            placeholder="Brief overview of the issue and fix">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Issue Description</label>
+                        <textarea class="form-control" id="tsdIssue" rows="3"
+                            placeholder="Description of the problem"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Resolution Steps (one per line)</label>
+                        <textarea class="form-control" id="tsdSteps" rows="4"
+                            placeholder="Step 1...\nStep 2..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Tags (comma-separated)</label>
+                        <input type="text" class="form-control" id="tsdTags" placeholder="docker, jenkins, agent">
+                    </div>
+                    <button type="submit" class="btn btn-neon">Submit for Review</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- GitHub Submission Section -->
+        <div class="form-container text-center mt-5">
+            <h4 class="mb-3">Submit from an External Source:</h4>
+            <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#githubModal">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                    style="width: 20px; vertical-align: middle; margin-right: 8px;">
+                GitHub
+            </button>
+        </div>
+
+        <!-- GitHub Modal -->
+        <div class="modal fade" id="githubModal" tabindex="-1" aria-labelledby="githubModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-dark text-white">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="githubModalLabel">Import from GitHub</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="githubRepoURL" class="form-label">Paste your GitHub repository URL:</label>
+                        <input type="url" class="form-control" id="githubRepoURL"
+                            placeholder="https://github.com/user/repo.git">
+                        <div class="form-text text-white-50 mt-2">Make sure it contains KBD/TSD JSON files.</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-neon" onclick="submitGitRepo()">Import</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <div class="text-center mt-4">
+            <a href="index.html" class="btn btn-outline-light btn-lg">← Back to Main Page</a>
+        </div>
+    </main>
+
+    <script>
+        function submitGitRepo() {
+            const repoURL = document.getElementById("githubRepoURL").value;
+            if (!repoURL) {
+                alert("Please paste a valid repository URL.");
+                return;
+            }
+
+            fetch("http://localhost:8000/api/import-github", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ repo_url: repoURL, realm: "git" })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    alert(data.message || "Import complete.");
+                    location.reload();
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert("Failed to import repository.");
+                });
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

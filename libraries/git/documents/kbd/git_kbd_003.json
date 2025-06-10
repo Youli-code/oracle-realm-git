@@ -1,0 +1,13 @@
+{
+  "type": "kbd",
+  "title": "How Git Stores Credentials and Authentication Methods",
+  "summary": "Breaks down how Git handles HTTPS vs SSH authentication and why you might be prompted repeatedly.",
+  "content": "If Git is prompting for credentials repeatedly, check your credential helper (`git config credential.helper`). For SSH, ensure your public key is added to GitHub and your `~/.ssh/config` is configured properly.",
+  "tags": [
+    "git",
+    "ssh",
+    "authentication",
+    "credentials"
+  ],
+  "last_updated": "2025-06-07T14:59:15.068637"
+}

@@ -1,0 +1,13 @@
+{
+  "type": "kbd",
+  "title": "Understanding Git Rebase vs Merge",
+  "summary": "Compares git rebase and merge, when to use them, and how to resolve conflicts.",
+  "content": "Git rebase is used to move a branch to a new base commit, cleaning up history. Git merge combines histories preserving original commits. Use rebase for a linear history and merge for clear feature tracking.",
+  "tags": [
+    "git",
+    "rebase",
+    "merge",
+    "history"
+  ],
+  "last_updated": "2025-06-07T14:59:15.068617"
+}

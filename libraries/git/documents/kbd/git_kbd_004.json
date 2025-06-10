@@ -1,0 +1,13 @@
+{
+  "type": "kbd",
+  "title": "Understanding Git HEAD and Detached HEAD State",
+  "summary": "Defines what HEAD is in Git and what happens in a detached HEAD state.",
+  "content": "HEAD in Git refers to the current commit your repo is on. Detached HEAD happens when you checkout a specific commit instead of a branch, which can lead to losing changes unless they're saved to a branch.",
+  "tags": [
+    "git",
+    "head",
+    "detached",
+    "commit"
+  ],
+  "last_updated": "2025-06-07T14:59:15.068639"
+}

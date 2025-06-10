@@ -1,0 +1,14 @@
+{
+  "type": "tsd",
+  "title": "Resolving Merge Conflicts in VS Code",
+  "summary": "Using VS Code's UI to resolve merge conflicts from rebase or pull.",
+  "issue_description": "Git merge stopped due to conflict. Files show conflict markers.",
+  "resolution_steps": "Step 1: Open file in VS Code\nStep 2: Use built-in conflict resolution UI to accept changes\nStep 3: Stage and commit the resolved file",
+  "tags": [
+    "git",
+    "conflict",
+    "vscode",
+    "merge"
+  ],
+  "last_updated": "2025-06-07T14:59:15.068929"
+}

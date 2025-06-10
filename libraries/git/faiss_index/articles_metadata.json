@@ -1,0 +1,139 @@
+[
+  {
+    "type": "kbd",
+    "title": "Understanding Git Rebase vs Merge",
+    "summary": "Compares git rebase and merge, when to use them, and how to resolve conflicts.",
+    "content": "Git rebase is used to move a branch to a new base commit, cleaning up history. Git merge combines histories preserving original commits. Use rebase for a linear history and merge for clear feature tracking.",
+    "tags": [
+      "git",
+      "rebase",
+      "merge",
+      "history"
+    ],
+    "last_updated": "2025-06-07T14:59:15.068617"
+  },
+  {
+    "type": "kbd",
+    "title": "Fixing Non-Fast-Forward Errors in Git",
+    "summary": "Explains what causes non-fast-forward push rejections and how to handle them.",
+    "content": "Non-fast-forward errors occur when the remote branch has new commits not in your local branch. Use `git pull --rebase` to sync before pushing or `git push --force` with caution if overwriting.",
+    "tags": [
+      "git",
+      "non-fast-forward",
+      "push",
+      "rebase"
+    ],
+    "last_updated": "2025-06-07T14:59:15.068635"
+  },
+  {
+    "type": "kbd",
+    "title": "How Git Stores Credentials and Authentication Methods",
+    "summary": "Breaks down how Git handles HTTPS vs SSH authentication and why you might be prompted repeatedly.",
+    "content": "If Git is prompting for credentials repeatedly, check your credential helper (`git config credential.helper`). For SSH, ensure your public key is added to GitHub and your `~/.ssh/config` is configured properly.",
+    "tags": [
+      "git",
+      "ssh",
+      "authentication",
+      "credentials"
+    ],
+    "last_updated": "2025-06-07T14:59:15.068637"
+  },
+  {
+    "type": "kbd",
+    "title": "Understanding Git HEAD and Detached HEAD State",
+    "summary": "Defines what HEAD is in Git and what happens in a detached HEAD state.",
+    "content": "HEAD in Git refers to the current commit your repo is on. Detached HEAD happens when you checkout a specific commit instead of a branch, which can lead to losing changes unless they're saved to a branch.",
+    "tags": [
+      "git",
+      "head",
+      "detached",
+      "commit"
+    ],
+    "last_updated": "2025-06-07T14:59:15.068639"
+  },
+  {
+    "type": "kbd",
+    "title": "How to Undo Commits in Git Safely",
+    "summary": "Details how to reverse commits using revert, reset, and checkout.",
+    "content": "Use `git revert` to undo public commits without altering history. Use `git reset` for local history changes (with --soft, --mixed, or --hard). Use `git checkout` or `restore` to revert specific files.",
+    "tags": [
+      "git",
+      "undo",
+      "revert",
+      "reset",
+      "checkout"
+    ],
+    "last_updated": "2025-06-07T14:59:15.068640"
+  },
+  {
+    "type": "tsd",
+    "title": "Push Rejected: Non-Fast-Forward",
+    "summary": "Push fails because remote contains commits not present locally.",
+    "issue_description": "When pushing, Git returns: 'Updates were rejected because the tip of your current branch is behind its remote counterpart.'",
+    "resolution_steps": "Step 1: Run `git pull --rebase`\nStep 2: Resolve any merge conflicts\nStep 3: Push again with `git push`",
+    "tags": [
+      "git",
+      "push",
+      "rebase",
+      "error"
+    ],
+    "last_updated": "2025-06-07T14:59:15.068916"
+  },
+  {
+    "type": "tsd",
+    "title": "SSH Key Not Recognized by GitHub",
+    "summary": "Repeated credential prompts even with SSH configured.",
+    "issue_description": "Even after setting up an SSH key, Git keeps asking for GitHub login.",
+    "resolution_steps": "Step 1: Check with `ssh -T git@github.com`\nStep 2: Ensure public key is added in GitHub > SSH Settings\nStep 3: Configure `~/.ssh/config` to match the correct key for github.com",
+    "tags": [
+      "git",
+      "ssh",
+      "credential",
+      "github"
+    ],
+    "last_updated": "2025-06-07T14:59:15.068922"
+  },
+  {
+    "type": "tsd",
+    "title": "Undoing a Commit Made to the Wrong Branch",
+    "summary": "Fix a commit accidentally made to main instead of a feature branch.",
+    "issue_description": "Developer committed directly to `main` instead of the intended `feature/login` branch.",
+    "resolution_steps": "Step 1: Checkout the correct branch\nStep 2: Run `git cherry-pick <commit-hash>`\nStep 3: Return to `main` and use `git reset --hard HEAD~1` to undo",
+    "tags": [
+      "git",
+      "commit",
+      "branch",
+      "reset",
+      "cherry-pick"
+    ],
+    "last_updated": "2025-06-07T14:59:15.068925"
+  },
+  {
+    "type": "tsd",
+    "title": "Resolving Merge Conflicts in VS Code",
+    "summary": "Using VS Code's UI to resolve merge conflicts from rebase or pull.",
+    "issue_description": "Git merge stopped due to conflict. Files show conflict markers.",
+    "resolution_steps": "Step 1: Open file in VS Code\nStep 2: Use built-in conflict resolution UI to accept changes\nStep 3: Stage and commit the resolved file",
+    "tags": [
+      "git",
+      "conflict",
+      "vscode",
+      "merge"
+    ],
+    "last_updated": "2025-06-07T14:59:15.068929"
+  },
+  {
+    "type": "tsd",
+    "title": "Recovering Deleted Local Branch",
+    "summary": "How to recover a local Git branch that was accidentally deleted.",
+    "issue_description": "User deleted a branch before merging and wants to recover the lost work.",
+    "resolution_steps": "Step 1: Run `git reflog`\nStep 2: Find the commit where the branch pointed\nStep 3: Run `git checkout -b <branch-name> <commit>` to restore",
+    "tags": [
+      "git",
+      "recovery",
+      "reflog",
+      "branch"
+    ],
+    "last_updated": "2025-06-07T14:59:15.068932"
+  }
+]

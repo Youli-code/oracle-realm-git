@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KBD Articles</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #cccccc;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #7000ff, #00f6ff);
+      color: white;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border: none;
+      margin-top: 20px;
+      box-shadow: 0 0 20px rgba(0, 246, 255, 0.2);
+      padding: 20px;
+    }
+
+    .article-link {
+      text-decoration: none;
+      color: #00f6ff;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .article-link:hover {
+      text-decoration: underline;
+    }
+
+    .card p.article-preview {
+      color: #ffffff !important;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>KBD Articles</h1>
+    <p class="lead">Explore knowledge base documents for your active Realm</p>
+  </header>
+
+  <main class="container">
+    <div id="articleList" class="mt-4 section"></div>
+    <div class="text-center mt-5">
+      <a href="index.html" class="btn btn-outline-light">← Back to Home</a>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const container = document.getElementById("articleList");
+      const realm = new URLSearchParams(window.location.search).get("realm") || "git";
+
+      try {
+        const res = await fetch(`http://localhost:8000/api/docs/kbd?realm=${realm}`);
+        const articles = await res.json();
+
+        if (!Array.isArray(articles) || articles.length === 0) {
+          container.innerHTML = '<p class="text-white">No KBD articles found.</p>';
+        } else {
+          articles.forEach(article => {
+            const card = document.createElement("div");
+            card.className = "card mb-3 p-3";
+            card.innerHTML = `
+              <h4><a class="article-link" href="view.html?id=${article.id}&type=KBD&realm=${realm}" target="_blank">${article.title}</a></h4>
+              <p class="article-preview">${article.content.slice(0, 100)}...</p>
+            `;
+            container.appendChild(card);
+          });
+        }
+      } catch (error) {
+        console.error("Error loading KBD articles:", error);
+        container.innerHTML = '<p class="text-danger">Failed to load KBD documents.</p>';
+      }
+    });
+  </script>
+</body>
+
+</html>
